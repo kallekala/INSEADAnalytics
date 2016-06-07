@@ -58,6 +58,7 @@ For more information on downloading finance data from the internet as well as on
 1. Can you find some interesting finance related R package or github repository? 
 **Your Answers here:**
 <br>
+
 <br>
 
 <hr>
@@ -86,8 +87,15 @@ pnl_plot(SPY)
 
 **Your Answers here:**
 <br>
+1. mytickers = c("SPY", "AAPL")
 <br>
+2. 
+cumulative: sum(StockReturns[,2]) -> 5.755208
+Avg: mean(StockReturns[,2]) -> 0.001482196
+Stand dev of returns:
+sd(StockReturns[,2]) -> 0.02424934
 <br>
+3. Add “YHOO”
 <br>
 
 <hr>
@@ -127,8 +135,17 @@ We can also transpose the matrix of returns to create a new "horizontal" matrix.
 
 **Your Answers here:**
 <br>
+1. nrow & ncol
 <br>
+transposedData <- t(StockReturns)
+pf <- apply(transposedData, 2, mean)
+pnl_plot(pf)
 <br>
+```{r echo=FALSE, comment=NA, warning=FALSE, message=FALSE,results='asis',fig.align='center', fig.height=4,fig.width= 6, fig=TRUE}
+transposedData <- t(StockReturns)
+pf <- apply(transposedData, 2, mean)
+pnl_plot(pf)
+```
 <br>
 
 <hr>
@@ -145,6 +162,10 @@ This is an important step and will get you to think about the overall process on
 
 **Your Answers here:**
 <br>
+1. Date is already set to 2001-01-01 in the dataset: 
+website_used = "yahoo" # can be "yahoo" or other ( see help(getSymbols) ). Depending on the website we may need to change the stock tickers' representation
+mytickers = c("SPY", "AAPL")  # Other tickers for example are "GOOG", "GS", "TSLA", "FB", "MSFT", 
+startDate = "2001-01-01"
 <br>
 <br>
 <br>
@@ -179,6 +200,7 @@ myData + StockReturns[1:40,])
 
 **Your Answers here:**
 <br>
+1. i get 20
 <br>
 <br>
 <br>
